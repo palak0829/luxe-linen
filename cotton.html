@@ -1,51 +1,150 @@
-<link rel="stylesheet" type="text/css" href="style.css">
-<h1>Our  Cotton Bedsheets</h1>
-        </header>
-       
-<div class="product-container">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotton Collection - Luxe Linen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">Luxe Linen</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Products ▾</a>
+                <div class="dropdown-content">
+                    <a href="cotton.html">Cotton Bedsheets</a>
+                    <a href="silk.html">Silk Bedsheets</a>
+                    <a href="cartoon.html">Cartoon Bedsheets</a>
+                </div>
+            </li>
+            <li><a href="cart.html">🛒Cart (<span id="cartCount">0</span>)</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= CATEGORY HERO ================= -->
+
+    <section class="category-hero">
+        <div class="category-hero-content">
+            <span class="hero-tag">COTTON COLLECTION</span>
+            <h1>Everyday Comfort, Beautifully Crafted</h1>
+            <p>Discover our premium cotton bedsheets designed for the perfect night's sleep.</p>
+        </div>
+    </section>
+
+    <!-- ================= SEARCH ================= -->
+
+    <section class="search-section">
+        <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+    </section>
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section class="product-heading">
+        <h1>Featured Collection</h1>
+        <p>Comfort and craftsmanship in every detail.</p>
+    </section>
+
+    <section class="products">
         <div class="product-card">
-        <img src="c-images/cb2.webp"alt="Cotton Bedsheet 2" >
-        <h3>Cotton Bedsheet 2</h3>
-        <p>₹799</p>
-        <button>Buy Now</button>
+            <div class="product-image">
+                <span class="badge new">NEW</span>
+                <img src="c-images/cotton bedsheet1.webp" alt="Cotton Bedsheet">
+            </div>
+            <h3>Premium Cotton Bedsheet</h3>
+            <div class="product-rating">★★★★★</div>
+            <p class="product-description">100% Cotton • Queen Size</p>
+            <p class="product-price">₹799</p>
+            <button onclick="addToCart('Cotton Bedsheet',799)">Add to Cart</button>
         </div>
-    
-
-
-<div class="product-card">
-        <img src="c-images/cb3.jpeg" alt="Cotton Bedsheet 3">
-        <h3>Cotton Bedsheet 3</h3>
-        <p>₹899</p>
-        <button>Buy Now</button>
-        </div>
-
-
 
         <div class="product-card">
-            <img src="c-images/cb4.webp" alt="Cotton Bedsheet 4" >
-            <h3> Cotton Bedsheet 4</h3>
-            <p>₹999</p>
-        <button>Buy Now</button>
+            <div class="product-image">
+                <span class="badge">BEST SELLER</span>
+                <img src="c-images/cb2.webp" alt="Designer Cotton">
+            </div>
+            <h3>Designer Cotton Bedsheet</h3>
+            <div class="product-rating">★★★★★</div>
+            <p class="product-description">Premium Cotton • King Size</p>
+            <p class="product-price">₹999</p>
+            <button onclick="addToCart('Designer Cotton',999)">Add to Cart</button>
         </div>
-    
-       <div class="product-card">
-        <img src="c-images/cb5.jpeg" alt="Cotton Bedsheet 4">
-        <h3>Cotton Bedsheet 4</h3>
-        <p>₹999</p>
-        <button>Buy Now</button>
-    </div>
-    
-    <div class="product-card">
-        <img src="c-images/cb6.jpeg" alt="Cotton Bedsheet 5" >
-        <h3>Cotton Bedsheet 5</h3>
-        <p>₹1099</p>
-        <button>Buy Now</button>
-    </div>
-   
-    <div class="product-card">
-        <img src="c-images/cb7.jpeg" alt="Cotton Bedsheet 6">
-        <h3>Cotton Bedsheet 6</h3>          
-        <p>₹1199</p>
-        <button>Buy Now</button>
-    </div>
-</div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span class="badge new">NEW</span>
+                <img src="c-images/cb3.jpeg" alt="Floral Bedsheet">
+            </div>
+            <h3>Floral Cotton Bedsheet</h3>
+            <div class="product-rating">★★★★☆</div>
+            <p class="product-description">100% Cotton • Double Bed</p>
+            <p class="product-price">₹899</p>
+            <button onclick="addToCart('Floral Bedsheet',899)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span class="badge">BEST SELLER</span>
+                <img src="c-images/cb4.webp" alt="Classic Cotton">
+            </div>
+            <h3>Classic Cotton Bedsheet</h3>
+            <div class="product-rating">★★★★★</div>
+            <p class="product-description">100% Cotton • Queen Size</p>
+            <p class="product-price">₹749</p>
+            <button onclick="addToCart('Classic Cotton',749)">Add to Cart</button>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>LUXE LINEN</h3>
+                <p>Premium quality bedsheets crafted for comfort and elegance.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Collections</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Collections</h3>
+                <ul>
+                    <li><a href="cotton.html">Cotton</a></li>
+                    <li><a href="silk.html">Silk</a></li>
+                    <li><a href="cartoon.html">Cartoon</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:info@luxelinen.com">info@luxelinen.com</a></li>
+                    <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Luxe Linen. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

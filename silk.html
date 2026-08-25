@@ -1,40 +1,174 @@
-<link rel="stylesheet" type="text/css" href="style.css">
-<h1>Our Silk Bedsheets</h1> 
-</header>
-<div class="product-container">
-    <div class="product-card">
-        <img src="s-images/sb1.jpeg" alt="Silk Bedsheet 1">
-        <h3>Silk Bedsheet 1</h3>
-        <p>₹1999</p>
-        <button>Buy Now</button>
-    </div>
-    <div class="product-card">
-        <img src="s-images/sb2.jpeg" alt="Silk Bedsheet 2">
-        <h3>Silk Bedsheet 2</h3>
-        <p>₹2499</p>   
-        <button>Buy Now</button>
-    </div>          
-    <div class="product-card">
-        <img src="s-images/sb3.jpeg" alt="Silk Bedsheet 3">
-        <h3>Silk Bedsheet 3</h3>
-        <p>₹2999</p>
-        <button>Buy Now</button>
-    </div>
-    <div class="product-card">  
-        <img src="s-images/sb4.jpeg" alt="Silk Bedsheet 4">
-        <h3>Silk Bedsheet 4</h3>
-        <p>₹3499</p>
-        <button>Buy Now</button>
-    </div>
-    <div class="product-card">
-        <img src="s-images/sb5.jpeg" alt="Silk Bedsheet 5">
-        <h3>Silk Bedsheet 5</h3>
-        <p>₹3999</p>        
-        <button>Buy Now</button>
-    </div>
-    <div class="product-card">  
-        <img src="s-images/sb6.jpeg" alt="Silk Bedsheet 6">
-        <h3>Silk Bedsheet 6</h3>
-        <p>₹4499</p>
-        <button>Buy Now</button>
-    </div>     
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silk Collection - Luxe Linen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">Luxe Linen</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Products ▾</a>
+                <div class="dropdown-content">
+                    <a href="cotton.html">Cotton Bedsheets</a>
+                    <a href="silk.html">Silk Bedsheets</a>
+                    <a href="cartoon.html">Cartoon Bedsheets</a>
+                </div>
+            </li>
+            <li><a href="cart.html">🛒Cart (<span id="cartCount">0</span>)</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= CATEGORY HERO ================= -->
+
+    <section class="category-hero">
+        <div class="category-hero-content">
+            <span class="hero-tag">SILK COLLECTION</span>
+            <h1>Elegance in Every Thread</h1>
+            <p>Experience the luxury of premium silk bedsheets for a sophisticated bedroom.</p>
+        </div>
+    </section>
+
+    <!-- ================= SEARCH ================= -->
+
+    <section class="search-section">
+        <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+    </section>
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section class="product-heading">
+        <h1>Featured Collection</h1>
+        <p>Comfort and craftsmanship in every detail.</p>
+    </section>
+
+    <section class="products">
+        <div class="product-card">
+            <div class="product-image">
+                <span class="badge new">NEW</span>
+                <img src="s-images/sb1.jpeg" alt="Silk Bedsheet">
+            </div>
+            <h3>Premium Silk Bedsheet</h3>
+            <div class="product-rating">★★★★★</div>
+            <p class="product-description">100% Silk • King Size</p>
+            <p class="product-price">₹1999</p>
+            <button onclick="addToCart('Silk Bedsheet',1999)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span class="badge">BEST SELLER</span>
+                <img src="s-images/sb2.jpeg" alt="Silk Bedsheet">
+            </div>
+            <h3>Luxury Silk Bedsheet</h3>
+            <div class="product-rating">★★★★★</div>
+            <p class="product-description">Pure Silk • Queen Size</p>
+            <p class="product-price">₹1799</p>
+            <button onclick="addToCart('Luxury Silk',1799)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span class="badge new">NEW</span>
+                <img src="s-images/sb3.jpeg" alt="Silk Bedsheet">
+            </div>
+            <h3>Designer Silk Bedsheet</h3>
+            <div class="product-rating">★★★★☆</div>
+            <p class="product-description">100% Silk • Double Bed</p>
+            <p class="product-price">₹2199</p>
+            <button onclick="addToCart('Designer Silk',2199)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span class="badge">BEST SELLER</span>
+                <img src="s-images/sb4.jpeg" alt="Silk Bedsheet">
+            </div>
+            <h3>Classic Silk Bedsheet</h3>
+            <div class="product-rating">★★★★★</div>
+            <p class="product-description">Pure Silk • King Size</p>
+            <p class="product-price">₹1899</p>
+            <button onclick="addToCart('Classic Silk',1899)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span class="badge new">NEW</span>
+                <img src="s-images/sb5.jpeg" alt="Silk Bedsheet">
+            </div>
+            <h3>Premium Silk Bedsheet</h3>
+            <div class="product-rating">★★★★★</div>
+            <p class="product-description">100% Silk • King Size</p>
+            <p class="product-price">₹3999</p>
+            <button onclick="addToCart('Silk Bedsheet',3999)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span class="badge">BEST SELLER</span>
+                <img src="s-images/sb6.jpeg" alt="Silk Bedsheet">
+            </div>
+            <h3>Luxury Silk Bedsheet</h3>
+            <div class="product-rating">★★★★★</div>
+            <p class="product-description">Pure Silk • Queen Size</p>
+            <p class="product-price">₹4499</p>
+            <button onclick="addToCart('Luxury Silk',4499)">Add to Cart</button>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>LUXE LINEN</h3>
+                <p>Premium quality bedsheets crafted for comfort and elegance.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Collections</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Collections</h3>
+                <ul>
+                    <li><a href="cotton.html">Cotton</a></li>
+                    <li><a href="silk.html">Silk</a></li>
+                    <li><a href="cartoon.html">Cartoon</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:info@luxelinen.com">info@luxelinen.com</a></li>
+                    <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> 2026 Luxe Linen. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>     
