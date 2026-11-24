@@ -120,7 +120,24 @@
     </footer>
 
     <script src="script.js"></script>
-
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  let data = {
+    full_name: document.querySelector('[name="name"]').value,
+    email: document.querySelector('[name="email"]').value,
+    message: document.querySelector('[name="message"]').value
+  };
+  try {
+    let res = await fetch('https://oracleapex.com/ords/palak787/users/messages', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    });
+    if(res.ok){ alert('Message send! ❤️'); this.reset(); }
+    else { alert(' try again'); }
+  } catch(err){ alert('API connected'); }
+});
+</script>
 </body>
-
 </html>

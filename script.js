@@ -1,4 +1,10 @@
-function offer(){
+fetch('http://localhost:3000/api/products')
+  .then(res => res.json())
+  .then(products => {
+    console.log(products);
+    
+  });
+  function offer(){
 
 alert("🎉 Welcome! Flat 20% OFF Today");
 

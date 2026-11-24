@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Users List</title>
+<style>
+  body{font-family:Arial; background:#f2f2f2; padding:15px}
+  h2{text-align:center}
+  .card{background:white; padding:15px; margin:10px 0; border-radius:12px; box-shadow:0 2px 8px #ccc}
+  .card b{font-size:18px}
+  .card p{margin:4px 0; color:#555}
+</style>
+</head>
+<body>
+
+<h2>All Users</h2>
+<div id="list">Loading...</div>
+
+<script>
+fetch('https://oracleapex.com/ords/palak787/users/all')
+  .then(res => res.json())
+  .then(data => {
+    let html = "";
+    data.items.forEach(u => {
+      html += `
+        <div class="card">
+          <b>${u.user_name}</b>
+          <p>📧 ${u.email}</p>
+          <p>📞 ${u.phone}</p>
+          <p>📍 ${u.address}</p>
+        </div>
+      `;
+    });
+    document.getElementById('list').innerHTML = html;
+  })
+  .catch(err => {
+    document.getElementById('list').innerHTML = "Error: " + err;
+  });
+</script>
+
+</body>
+</html>
