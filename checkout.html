@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout - Bedsheets</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .checkout { max-width: 500px; margin: 40px auto; padding: 20px; }
+    .checkout input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 6px; }
+    .checkout button { width: 100%; padding: 14px; background: #222; color: #fff; border: none; border-radius: 6px; margin-top: 10px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="checkout">
+    <h2>Checkout</h2>
+    <p>Total to Pay: <b id="checkoutTotal">₹0</b></p>
+    <input id="custName" type="text" placeholder="Full Name">
+   
+    <input id="custPhone" type="text" placeholder="Phone Number">
+
+    <input id="custAddress" type="text" placeholder="Full Address">
+
+    <input id="custCity" type="text" placeholder="City / Pincode">
+   
+    <select id="payMethod" style="width:100%; padding:12px; margin:8px 0;">
+      <option>Cash on Delivery</option>
+      <option>UPI</option>
+      <option>Card</option>
+    </select>
+    <button onclick="placeOrder()">Place Order</button>
+    <p><a href="cart.html">← Back to Cart</a></p>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let total = 0;
+    cart.forEach(item => { total += item.price * (item.quantity || 1); });
+    document.getElementById("checkoutTotal").innerText = "₹" + total;
+
+    function placeOrder() {
+  let name = document.getElementById("custName").value;
+  let phone = document.getElementById("custPhone").value;
+  let address = document.getElementById("custAddress").value;
+  let city = document.getElementById("custCity").value;
+  let payment = document.getElementById("payMethod").value;
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let total = 0;
+  let itemsText = "";
+  cart.forEach(item => {
+    let qty = item.quantity || 1;
+    total += item.price * qty;
+    itemsText += `- ${item.name} x ${qty} = ₹${item.price * qty}\n`;
+  });
+
+  let message = `*New Order* \n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}, ${city}\nPayment: ${payment}\n\nItems:\n${itemsText}\nTotal: ₹${total}`;
+
+  let myNumber = "917696968063";
+  let url = "https://wa.me/" + myNumber + "?text=" + encodeURIComponent(message);
+  
+  window.open(url, "_blank");
+  localStorage.removeItem("cart");
+}
+  </script>
+</body>
+</html>
